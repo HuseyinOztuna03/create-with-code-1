@@ -1,17 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CarController : MonoBehaviour
 {
-    public float speed = 5f;
-    void Start()
-    {
-        
-    }
+    public Rigidbody rb;
 
-    void Update()
+    public float forwardForce = 20f; // Adjust this value to control the car's speed
+
+    void FixedUpdate()
     {
-        transform.Translate(Vector3.forward * Time.deltaTime * speed);
+        // Apply a constant forward force to the car's Rigidbody
+        rb.transform.Translate(transform.forward * forwardForce * Time.deltaTime);
     }
 }
