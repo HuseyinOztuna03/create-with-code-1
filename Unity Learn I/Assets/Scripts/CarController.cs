@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CarController : MonoBehaviour
 {
-
+    public float speed = 5f;
     void Start()
     {
         
@@ -12,6 +12,6 @@ public class CarController : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(Vector3.forward * Time.deltaTime * 2);
+        transform.Translate(Vector3.forward * Time.deltaTime * speed);
     }
 }
